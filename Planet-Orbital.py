@@ -94,7 +94,11 @@ def animate(tick):
     return pathlist + planetlist + energylist
 
 # Animate
-animation = FuncAnimation(fig, animate, frames=len(x_pos), interval=1, repeat=False)
+frame_step = 5
+animation_frames = list(range(0, len(x_pos), frame_step))
+if animation_frames[-1] != len(x_pos) - 1:
+    animation_frames.append(len(x_pos) - 1)
+animation = FuncAnimation(fig, animate, frames=animation_frames, interval=1, repeat=False)
 
 # Energy graph legend
 energy.legend()
