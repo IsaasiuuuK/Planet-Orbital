@@ -34,8 +34,8 @@ ax.grid(True)
 
 # Objects on graph
 ax.plot(0, 0, marker = 'o', markersize = 10, color = 'yellow', label = 'Star') # Star
-path, = ax.plot([], [], marker = '_', color = 'blue', label = 'Planet Path')[0] # Planet path
-Planet, = ax.plot([], [], marker = 'o', markersize = 4, color = 'blue', label = 'Planet')[0] # Planet 
+path, = ax.plot([], [], linestyle = '-', color = 'blue', label = 'Planet Path') # Planet path
+Planet, = ax.plot([], [], marker = 'o', markersize = 4, color = 'blue', label = 'Planet') # Planet 
 
 # Show graph
 matplotlib.pyplot.show()
