@@ -42,12 +42,12 @@ ax.legend()
 
 # Animation function
 def animate(tick):
-    path.set_data(x_pos[:tick], y_pos[:tick])
-    Planet.set_data(x_pos[tick], y_pos[tick])
-    return path, Planet
+    path.set_data(x_pos[:tick + 1], y_pos[:tick + 1])
+    Planet.set_data([x_pos[tick]], [y_pos[tick]])
+    return path, Planet,
 
 # Animate
-animatation = FuncAnimation(fig, animate, frames=len(x_pos), interval=10,)
+animatation = FuncAnimation(fig, animate, frames=len(x_pos), interval=1, repeat=False)
 
 # Show graph
 matplotlib.pyplot.show()
