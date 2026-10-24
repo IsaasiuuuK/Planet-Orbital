@@ -37,5 +37,17 @@ ax.plot(0, 0, marker = 'o', markersize = 10, color = 'yellow', label = 'Star') #
 path, = ax.plot([], [], linestyle = '-', color = 'blue', label = 'Planet Path') # Planet path
 Planet, = ax.plot([], [], marker = 'o', markersize = 4, color = 'blue', label = 'Planet') # Planet 
 
+# Label 
+ax.legend()
+
+# Animation function
+def animate(tick):
+    path.set_data(x_pos[:tick], y_pos[:tick])
+    Planet.set_data(x_pos[tick], y_pos[tick])
+    return path, Planet
+
+# Animate
+animatation = FuncAnimation(fig, animate, frames=len(x_pos), interval=10,)
+
 # Show graph
 matplotlib.pyplot.show()
