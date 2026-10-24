@@ -30,7 +30,14 @@ y_pos = orbital.y[1]
 fig, ax = matplotlib.pyplot.subplots()
 ax.set_xlim(-1.5, 1.5)
 ax.set_ylim(-1.5, 1.5)
+ax.grid(True)
 
+# Objects on graph
+ax.plot(0, 0, marker = 'o', markersize = 10, color = 'yellow', label = 'Star') # Star
+path_collect = ax.plot([], [], marker = '_', color = 'blue', label = 'Planet Path')[0] # Planet path
+path = path_collect[0]
+Planet_collect = ax.plot([], [], marker = 'o', markersize = 4, color = 'blue', label = 'Planet')[0] # Planet 
+Planet = Planet_collect[0]
 
 # Show graph
 matplotlib.pyplot.show()
